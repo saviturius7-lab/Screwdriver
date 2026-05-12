@@ -2,5 +2,5 @@
   "name": "CampusLink AI",
   "description": "AI-powered campus placement intelligence platform for historical analysis, semantic search, and student-company matching.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["AI Semantic Search", "Placement Analytics", "Hiring Tracker"]
+  "majorCapabilities": ["AI Semantic Search", "Placement Analytics", "Hiring Tracker", "Vector Compatibility Engine", "Preparation Roadmaps"]
 }

@@ -7,22 +7,28 @@ import {
   Settings, 
   LogOut,
   Zap,
-  TrendingUp,
-  FileText
+  Activity,
+  FileText,
+  Brain,
+  Target,
+  ShieldCheck
 } from 'lucide-react';
 import { cn } from '../lib/utils';
+import { useAuthStore } from '../store/authStore';
 
 const sidebarItems = [
   { id: 'overview', label: 'Overview', icon: LayoutDashboard },
   { id: 'intelligence', label: 'Intelligence', icon: Search },
   { id: 'compatibility', icon: Zap, label: 'Matching' },
-  { id: 'tracking', label: 'Hiring Tracker', icon: TrendingUp },
-  { id: 'resumes', label: 'Resume Parser', icon: FileText },
-  { id: 'students', label: 'Students', icon: Users },
-  { id: 'jobs', label: 'Companies', icon: Briefcase },
+  { id: 'prep', label: 'Strategy', icon: Target },
+  { id: 'trends', label: 'Signals', icon: Activity },
+  { id: 'predictions', label: 'Forecast', icon: Brain },
+  { id: 'resumes', label: 'Parser', icon: FileText },
 ];
 
 export function Sidebar({ activeTab, onTabChange }: { activeTab: string, onTabChange: (id: string) => void }) {
+  const { user } = useAuthStore();
+  
   return (
     <div className="w-64 bg-bg-main text-text-dim flex flex-col h-screen fixed left-0 top-0 border-r border-border-subtle">
       <div className="p-8">
@@ -50,6 +56,21 @@ export function Sidebar({ activeTab, onTabChange }: { activeTab: string, onTabCh
             {item.label}
           </button>
         ))}
+
+        {user?.role === 'admin' && (
+          <button
+            onClick={() => onTabChange('admin')}
+            className={cn(
+              "w-full flex items-center gap-3 px-4 py-2.5 rounded-sm text-[11px] font-bold uppercase tracking-widest transition-all",
+              activeTab === 'admin' 
+                ? "bg-brand-blue text-white shadow-[4px_4px_0px_#1e40af]" 
+                : "text-brand-blue hover:bg-brand-blue/10 border border-brand-blue/20"
+            )}
+          >
+            <ShieldCheck className="w-4 h-4" />
+            Control Center
+          </button>
+        )}
       </nav>
 
       <div className="p-4 border-t border-border-subtle space-y-1">

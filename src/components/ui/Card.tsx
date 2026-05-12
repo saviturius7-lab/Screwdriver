@@ -6,6 +6,9 @@ interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   subtitle?: string;
   headerAction?: React.ReactNode;
   children?: React.ReactNode;
+  className?: string;
+  onClick?: React.MouseEventHandler<HTMLDivElement>;
+  key?: React.Key;
 }
 
 export function Card({ title, subtitle, headerAction, children, className, ...props }: CardProps) {

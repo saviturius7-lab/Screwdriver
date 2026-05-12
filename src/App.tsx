@@ -3,10 +3,18 @@ import { Sidebar } from './components/Sidebar';
 import { OverviewModule } from './modules/OverviewModule';
 import { IntelligenceModule } from './modules/IntelligenceModule';
 import { ResumeModule } from './modules/ResumeModule';
-import { Sparkles, Bell, User } from 'lucide-react';
+import { HiringTrendsModule } from './modules/HiringTrendsModule';
+import { PredictionModule } from './modules/PredictionModule';
+import { MatchingModule } from './modules/MatchingModule';
+import { PrepModule } from './modules/PrepModule';
+import { AdminModule } from './modules/AdminModule';
+import { NotificationCenter } from './components/NotificationCenter';
+import { Sparkles, User } from 'lucide-react';
+import { useAuthStore } from './store/authStore';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('overview');
+  const { user, login, logout } = useAuthStore();
 
   return (
     <div className="min-h-screen bg-bg-main">
@@ -26,6 +34,8 @@ export default function App() {
           </div>
 
           <div className="flex items-center gap-6">
+            <NotificationCenter />
+            
             <div className="hidden lg:flex gap-4">
                <div className="px-4 py-2 border border-border-subtle rounded-sm">
                 <span className="block text-[10px] text-text-dim uppercase font-bold tracking-widest">System</span>
@@ -39,10 +49,13 @@ export default function App() {
 
             <div className="h-10 w-px bg-border-subtle mx-2"></div>
 
-            <button className="flex items-center gap-3 p-1 rounded-sm hover:bg-bg-card transition-all group">
+            <button 
+              onClick={() => login(user?.role === 'student' ? 'admin' : 'student')}
+              className="flex items-center gap-3 p-1 rounded-sm hover:bg-bg-card transition-all group"
+            >
               <div className="text-right hidden sm:block">
-                <p className="text-[10px] font-black tracking-widest text-white uppercase leading-none">Admin Portal</p>
-                <p className="text-[9px] text-text-dim font-mono uppercase mt-1">Saviturius_Dev</p>
+                <p className="text-[10px] font-black tracking-widest text-white uppercase leading-none">{user?.name}</p>
+                <p className="text-[9px] text-text-dim font-mono uppercase mt-1">{user?.role}</p>
               </div>
               <div className="w-10 h-10 rounded-sm bg-white flex items-center justify-center overflow-hidden border border-border-subtle shadow-[4px_4px_0px_#3b82f6] group-hover:shadow-[2px_2px_0px_#3b82f6] transition-all">
                 <User className="w-6 h-6 text-black" />
@@ -56,8 +69,13 @@ export default function App() {
           {activeTab === 'overview' && <OverviewModule />}
           {activeTab === 'intelligence' && <IntelligenceModule />}
           {activeTab === 'resumes' && <ResumeModule />}
+          {activeTab === 'trends' && <HiringTrendsModule />}
+          {activeTab === 'predictions' && <PredictionModule />}
+          {activeTab === 'compatibility' && <MatchingModule />}
+          {activeTab === 'prep' && <PrepModule />}
+          {activeTab === 'admin' && <AdminModule />}
           
-          {(activeTab !== 'overview' && activeTab !== 'intelligence' && activeTab !== 'resumes') && (
+          {(activeTab !== 'overview' && activeTab !== 'intelligence' && activeTab !== 'resumes' && activeTab !== 'trends' && activeTab !== 'predictions' && activeTab !== 'compatibility' && activeTab !== 'prep' && activeTab !== 'admin') && (
             <div className="flex flex-col items-center justify-center py-20 text-center">
               <div className="w-20 h-20 border border-dashed border-border-subtle text-brand-blue rounded-full flex items-center justify-center mb-6">
                 <Sparkles className="w-10 h-10" />
