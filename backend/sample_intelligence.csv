@@ -1,0 +1,5 @@
+student_email,company_name,content,difficulty
+john@example.com,GOOGLE,"The interview was heavily algorithm-based. 45 minutes of coding on a shared doc.",4
+sarah@example.com,STRIPE,"System design focus. Designing a distributed rate limiter.",5
+mike@example.com,NVIDIA,"GPU architecture questions and C++ concurrency basics.",4
+lily@example.com,AMAZON,"Leadership principles and one medium LeetCode problem.",3
