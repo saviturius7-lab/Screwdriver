@@ -214,7 +214,7 @@ async function startServer() {
   }
 
   app.listen(PORT, "0.0.0.0", () => {
-    console.log(`CampusLink AI Platform running on http://localhost:${PORT}`);
+    console.log(`ScrewDrivr Platform running on http://localhost:${PORT}`);
   });
 }
 

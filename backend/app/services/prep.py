@@ -22,7 +22,7 @@ class PrepService:
 
         # 2. Build Synthesis Prompt
         prompt = f"""
-        You are an AI Career Mentor for CampusLink.
+        You are an AI Career Mentor for ScrewDrivr.
         Generate a strictly structured 4-week preparation roadmap for a student targeting {target_company}.
 
         STUDENT PROFILE:

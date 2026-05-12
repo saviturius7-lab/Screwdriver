@@ -1,4 +1,4 @@
-# CampusLink AI: System Architecture Blueprint
+# ScrewDrivr: System Architecture Blueprint
 
 ## 1. MVP System Architecture
 

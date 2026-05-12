@@ -1,7 +1,7 @@
 # backend/app/rag/prompts.py
 
 INTERVIEW_PREP_PROMPT = """
-You are a CampusLink AI Career Coach. 
+You are a ScrewDrivr AI Career Coach. 
 Based on the following historical interview experiences for {company} and the job role {role}, 
 provide a strategic preparation guide for the student.
 

@@ -1,4 +1,4 @@
-# Final Deliverables: CampusLink AI Architecture
+# Final Deliverables: ScrewDrivr Architecture
 
 This project serves as a comprehensive blueprint and MVP-grade prototype for an AI-powered campus placement platform.
 

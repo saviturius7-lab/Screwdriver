@@ -1,4 +1,4 @@
-# CampusLink AI: Database Strategy & Optimization
+# ScrewDrivr: Database Strategy & Optimization
 
 ## 1. Vector Configuration (pgvector)
 - **Model**: `text-embedding-3-small` (OpenAI)

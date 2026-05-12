@@ -196,7 +196,7 @@ export function AdminModule() {
                         <div>
                             <p className="text-[9px] font-black text-brand-blue uppercase tracking-widest mb-1">Architecture Node</p>
                             <p className="text-[10px] font-mono text-white uppercase leading-normal">
-                                CampusLink v2.4a (Stable Build). Scaled for 20K active concurrent students.
+                                ScrewDrivr v2.4a (Stable Build). Scaled for 20K active concurrent students.
                             </p>
                         </div>
                     </Card>

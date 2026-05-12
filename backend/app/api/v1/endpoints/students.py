@@ -54,7 +54,7 @@ async def get_student_insights(student_id: UUID):
             "domain_match": "Backend Engineering"
         },
         "projects": [
-            {"title": "CampusLink AI", "description": "Placement intelligence platform", "tech_stack": ["FastAPI", "React"], "complexity": 9}
+            {"title": "ScrewDrivr", "description": "Placement intelligence platform", "tech_stack": ["FastAPI", "React"], "complexity": 9}
         ],
         "top_skills": ["Python", "FastAPI", "PostgreSQL", "Docker"],
         "market_readiness_score": 92.0
